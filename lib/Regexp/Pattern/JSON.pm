@@ -118,3 +118,6 @@ $RE{value} = {
 $define
     )}xms,
 };
+
+1;
+# ABSTRACT: Regexp patterns to match JSON

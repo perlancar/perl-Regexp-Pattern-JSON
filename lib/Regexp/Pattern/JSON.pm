@@ -121,3 +121,9 @@ $define
 
 1;
 # ABSTRACT: Regexp patterns to match JSON
+
+=head1 SEE ALSO
+
+L<JSON::Decode::Regexp>
+
+L<Regexp::Common::json>

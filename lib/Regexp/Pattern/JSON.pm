@@ -15,6 +15,12 @@ $RE{number} = {
     (?: [eE] [-+]? [0-9]+ )?
   )
     )}x,
+    examples => [
+        {str=>'12', matches=>1},
+        {str=>'-34', matches=>1},
+        {str=>'1.23', matches=>1},
+        {str=>'-1.23e2', matches=>1},
+    ],
 };
 
 $RE{string} = {
@@ -34,6 +40,12 @@ $RE{string} = {
     )*
     "
     )}xms,
+    examples => [
+        {str=>q(""), matches=>1},
+        {str=>q(''), matches=>0, summary=>"Single quotes are not string delimiters"},
+        {str=>q("\\n"), matches=>1},
+        {str=>q("contains \\" double quote"), matches=>1},
+    ],
 };
 
 our $define = qr{
@@ -101,6 +113,11 @@ $RE{array} = {
     (?&ARRAY)
 $define
     )}xms,
+    examples => [
+        {str=>q([]), matches=>1},
+        {str=>q([1, true, "abc"]), matches=>1},
+        {str=>q([1), matches=>0, summary=>"Missing closing bracket"},
+    ],
 };
 
 $RE{object} = {
@@ -109,6 +126,12 @@ $RE{object} = {
     (?&OBJECT)
 $define
     )}xms,
+    examples => [
+        {str=>q({}), matches=>1},
+        {str=>q({"a":1}), matches=>1},
+        {str=>q({"a":1), matches=>0, summary=>"Missing closing curly bracket"},
+        {str=>q({a: 1}), matches=>0, summary=>"Unquoted key"},
+    ],
 };
 
 $RE{value} = {
@@ -117,6 +140,13 @@ $RE{value} = {
     (?&VALUE)
 $define
     )}xms,
+    examples => [
+        {str=>q(true), matches=>1},
+        {str=>q([]), matches=>1},
+        {str=>q({}), matches=>1},
+        {str=>q(-1), matches=>1},
+        {str=>q(""), matches=>1},
+    ],
 };
 
 1;

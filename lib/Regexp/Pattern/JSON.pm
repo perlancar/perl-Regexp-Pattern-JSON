@@ -3,6 +3,8 @@ package Regexp::Pattern::JSON;
 # DATE
 # VERSION
 
+use 5.010001;
+
 our %RE;
 
 $RE{number} = {

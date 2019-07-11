@@ -1,24 +1,24 @@
-0.004   2018-09-12 (PERLANCAR)
+0.004   2018-09-12  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Require perl 5.010001 (uses 5.10 regex features) [CT].
 
 
-0.003   2018-09-10 (PERLANCAR)
+0.003   2018-09-10  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- Add examples.
 
 
-0.002   2018-03-25 (PERLANCAR)
+0.002   2018-03-25  Released-By: PERLANCAR
 
 	- No functional changes.
 
 	- [doc] Mention JSON::Decode::Regexp & Regexp::Common::json.
 
 
-0.001   2018-03-24 (PERLANCAR)
+0.001   2018-03-24  Released-By: PERLANCAR
 
         - First release, motivated by [RT#124874].
